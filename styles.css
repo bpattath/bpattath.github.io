@@ -1,266 +1,203 @@
-/*
-  Styles for the Balasubramanyam Pattath web site.
-
-  The palette draws on the teal and gold colours of the hero image.  A dark
-  navigation bar anchors the top of each page while generous white space
-  keeps the body airy and readable.  Flexbox and simple break‑points make
-  the layout responsive on mobile devices without the need for JavaScript.
-*/
-
-:root {
-  --primary-color: #0b3c5d;    /* deep teal for headings and nav */
-  --accent-color: #f2c14e;     /* warm gold accent */
-  --light-bg: #f9f9f9;         /* off‑white background for content sections */
-  --text-color: #333333;       /* dark grey text */
-  --link-color: #0b3c5d;
-  --link-hover: #f2c14e;
-  --max-width: 1000px;
-  --transition-speed: 0.2s;
-}
-
-html {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
 body {
-  margin: 0;
-  font-family: 'Montserrat', Arial, sans-serif;
-  color: var(--text-color);
-  line-height: 1.6;
-  background-color: var(--light-bg);
-}
+      background-color: #fff;
+      padding:50px;
+      font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, 
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+      color:#595959;
+      font-weight:400;
+    }
 
-/* Navigation */
-.site-header {
-  background-color: var(--primary-color);
-  color: white;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  width: 100%;
-}
+    h1, h2, h3, h4, h5, h6 {
+      color:#222;
+      margin:0 0 20px;
+    }
 
-.site-header nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 0.5rem 1rem;
-}
+    p, ul, ol, table, pre, dl {
+      margin:0 0 20px;
+    }
 
-.logo a {
-  color: white;
-  text-decoration: none;
-  font-weight: 700;
-  font-size: 1.3rem;
-}
+    h1, h2, h3 {
+      line-height:1.1;
+    }
 
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+    h1 {
+      font-size:28px;
+      font-weight: 500;
+    }
 
-.nav-links li {
-  margin-left: 1rem;
-}
+    h2 {
+      color:#393939;
+      font-weight: 500;
+    }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-speed) ease;
-}
+    h3, h4, h5, h6 {
+      color:#494949;
+      font-weight: 500;
+    }
 
-.nav-links a:hover {
-  color: var(--accent-color);
-}
+    a {
+      color:#39c;
+      text-decoration:none;
+    }
 
-/* Hero section */
-.hero {
-  background-image: url('hero.png');
-  background-size: cover;
-  background-position: center;
-  min-height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  color: white;
-  text-align: center;
-}
+    a:hover {
+      color:#069;
+    }
 
-.hero::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(11, 60, 93, 0.6); /* overlay to improve contrast */
-}
+    a small {
+      font-size:11px;
+      color:#777;
+      margin-top:-0.3em;
+      display:block;
+    }
 
-.hero-overlay {
-  position: relative;
-  z-index: 1;
-  padding: 0 1rem;
-}
+    a:hover small {
+      color:#777;
+    }
 
-.hero h1 {
-  font-size: 2.7rem;
-  margin: 0;
-  font-weight: 700;
-}
+    .wrapper {
+      width:860px;
+      margin:0 auto;
+    }
 
-.hero h2 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
-  font-weight: 400;
-}
+    blockquote {
+      border-left:1px solid #e5e5e5;
+      margin:0;
+      padding:0 0 0 20px;
+      font-style:italic;
+    }
 
-.hero p {
-  margin: 0.5rem 0 0;
-  font-size: 1rem;
-  opacity: 0.85;
-}
+    code, pre {
+      font-family:Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, 
+Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+      color:#333;
+    }
 
-/* Sections */
-section {
-  padding: 3rem 1rem;
-}
+    pre {
+      padding:8px 15px;
+      background: #f8f8f8;
+      border-radius:5px;
+      border:1px solid #e5e5e5;
+      overflow-x: auto;
+    }
 
-section h2 {
-  margin-top: 0;
-  font-size: 2rem;
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-  text-align: center;
-  position: relative;
-}
+    table {
+      width:100%;
+      border-collapse:collapse;
+    }
 
-section h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background-color: var(--accent-color);
-  margin: 0.5rem auto;
-}
+    th, td {
+      text-align:left;
+      padding:5px 10px;
+      border-bottom:1px solid #e5e5e5;
+    }
 
-.about, .interests, .contact, .cv, .teaching, .research {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+    dt {
+      color:#444;
+      font-weight:500;
+    }
 
-.about p {
-  font-size: 1.1rem;
-  text-align: justify;
-}
+    th {
+      color:#444;
+    }
 
-.interests ul {
-  list-style: none;
-  padding-left: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem 1rem;
-  justify-content: center;
-}
+    img {
+      max-width:100%;
+    }
 
-.interests li {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  font-weight: 500;
-}
+    header {
+      width:270px;
+      float:left;
+      position:fixed;
+      -webkit-font-smoothing:subpixel-antialiased;
+    }
 
-/* Contact */
-.contact p {
-  text-align: center;
-  margin: 0.3rem 0;
-}
+    strong {
+      color:#222;
+      font-weight:500;
+    }
 
-.contact a {
-  color: var(--primary-color);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color var(--transition-speed) ease;
-}
+    section {
+      width:500px;
+      float:right;
+      padding-bottom:50px;
+    }
 
-.contact a:hover {
-  border-color: var(--accent-color);
-}
+    small {
+      font-size:11px;
+    }
 
-/* Footer */
-footer {
-  background-color: var(--primary-color);
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+    hr {
+      border:0;
+      background:#e5e5e5;
+      height:1px;
+      margin:0 0 20px;
+    }
 
-/* Research & Teaching page styles */
-.content-section {
-  max-width: var(--max-width);
-  margin: 0 auto;
-}
+    footer {
+      width:270px;
+      float:left;
+      position:fixed;
+      bottom:50px;
+      -webkit-font-smoothing:subpixel-antialiased;
+    }
 
-.content-section h3 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
-}
+    @media print, screen and (max-width: 960px) {
 
-.content-section ul {
-  list-style: none;
-  padding-left: 0;
-}
+      div.wrapper {
+        width:auto;
+        margin:0;
+      }
 
-.content-section li {
-  margin-bottom: 0.7rem;
-  line-height: 1.4;
-}
+      header, section, footer {
+        float:none;
+        position:static;
+        width:auto;
+      }
 
-.content-section li span.title {
-  font-weight: 600;
-}
+      header {
+        padding-right:320px;
+      }
 
-.content-section a {
-  color: var(--link-color);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--accent-color);
-}
+      section {
+        border:1px solid #e5e5e5;
+        border-width:1px 0;
+        padding:20px 0;
+        margin:0 0 20px;
+      }
 
-.content-section a:hover {
-  color: var(--accent-color);
-  border-bottom-color: var(--primary-color);
-}
+      header a small {
+        display:inline;
+      }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .nav-links {
-    flex-direction: column;
-    align-items: flex-end;
-  }
-  .nav-links li {
-    margin: 0.5rem 0;
-  }
-  .hero h1 {
-    font-size: 2rem;
-  }
-  .hero h2 {
-    font-size: 1.2rem;
-  }
-  .hero p {
-    font-size: 0.9rem;
-  }
-  section h2 {
-    font-size: 1.5rem;
-  }
-}
+      header ul {
+        position:absolute;
+        right:50px;
+        top:52px;
+      }
+    }
+
+    @media print, screen and (max-width: 720px) {
+      body {
+        word-wrap:break-word;
+      }
+
+      header {
+        padding:0;
+      }
+
+      header ul, header p.view {
+        position:static;
+      }
+
+      pre, code {
+        word-wrap:normal;
+      }
+    }
+
+    @media print, screen and (max-width: 480px) {
+      body {
+        padding:15px;
+      }
+    }
